@@ -1,0 +1,49 @@
+.container-sign-in {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+}
+
+.container-sign-in img {
+    width: 50%;
+}
+
+.right-sign-in{
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-sign-in span:first-child {
+    width: 400px;
+    margin-bottom: 8px;
+    text-align: left;
+} 
+
+.right-sign-in h1{
+    width: 400px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.right-sign-in form{
+    width: 400px;
+}
+
+.right-sign-in span a {
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.right-sign-in form input {
+    margin-bottom: 16px;
+}
+
+.right-sign-in form button{
+    margin-top: 72px;
+    margin-bottom: 96px;
+}

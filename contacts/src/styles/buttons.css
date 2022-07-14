@@ -1,0 +1,19 @@
+button {
+    width: 100%;
+    height: 50px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.btn-green{
+    background-color: #04C45C;
+}
+
+.btn-red{
+    background-color: rgba(251, 6, 21, 0.65);;
+}
