@@ -1,0 +1,24 @@
+.container-main{
+    min-height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main{
+    max-width: 1300px;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    
+    padding-top: 40px 200px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main button{
+    width: 200px;
+    margin-bottom: 24px;
+}

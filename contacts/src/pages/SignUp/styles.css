@@ -1,0 +1,48 @@
+.container-sign-up {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+}
+
+.container-sign-up img {
+    width: 50%;
+}
+
+.left-sign-up {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-sign-up h3 {
+    margin-bottom: 40px;
+}
+
+.left-sign-up form {
+    width: 400px;
+}
+
+.left-sign-up span a {
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.left-sign-up form input {
+    margin-bottom: 16px;
+}
+
+.left-sign-up form button:first-of-type {
+    margin-top: 72px;
+    margin-bottom: 8px;
+
+    border-style: none;
+}
+
+.left-sign-up form button:last-of-type {
+    margin-bottom: 96px;
+    border-style: none;
+}
