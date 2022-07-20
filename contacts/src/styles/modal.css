@@ -1,0 +1,27 @@
+.backdrop {
+    width: 100vw;
+    min-height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    background: rgba(16, 15, 15, 0.56);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    padding: 56px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+    background-color: #FFFDFD;
+    border-radius: 8px;
+}

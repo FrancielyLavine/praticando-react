@@ -3,16 +3,56 @@
 }
 
 .table-header {
-    height: 46px;
-
-    padding: 0 24px;
-    
     display: flex;
     align-items: center;
-    text-align: left;
-
+    height: 46px;
     background-color: #F4F0F0;
+    padding: 0 24px;
+    text-align: left;
 }
-.table-header strong{
+
+.table-header strong {
     width: 30%;
+}
+
+.table-header div {
+    width: 10%;
+}
+
+.table-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.table-row {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    padding: 0 24px;
+    text-align: left;
+    background-color: #FFFAFA;
+    margin-bottom: 8px;
+}
+
+.table-row:first-child {
+    margin-top: 24px;
+}
+
+.table-row span {
+    width: 30%;
+}
+
+.container-action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 10%;
+}
+
+.container-action-buttons img {
+    width: 18px;
+    cursor: pointer;
+}
+
+.container-action-buttons img:first-child {
+    margin-right: 8px;
 }
