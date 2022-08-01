@@ -1,4 +1,7 @@
+import CloseIcon from '../../assets/close-icon.svg';
+import '../../styles/modal.css';
 import './styles.css';
+// import useGlobalContext from '../../hooks/useGlobalContext';
 
 function ConfirmModal({
     open,
@@ -9,21 +12,44 @@ function ConfirmModal({
     textBtnCancel,
     handleConfirm
 }) {
+
+    // const { currentContact } = useGlobalContext();
+
     return (
-        <div className="backdrop">
-            <div className="modal">
-                <h1>{title}</h1>
-                <span>{subTitle}</span>
+        <>
+            {open &&
+                <div className='backdrop'>
+                    <div className='modal modal-confirm'>
+                        <img
+                            src={CloseIcon}
+                            className="close-icon"
+                            alt="close"
+                            onClick={handleClose}
+                        />
 
-                <button className="btn-green">
-                    {textBtnConfirm}
-                </button>
+                        <h1>{title}</h1>
+                        {/* <span>{subTitle + ` ${currentContact.nome}`}?</span> */}
 
-                <button className="btn-red">
-                    {textBtnCancel}
-                </button>
-            </div>
-        </div>
+                        <div className='container-buttons'>
+                            <button
+                                className='btn-green btn-confirm'
+                                onClick={handleConfirm}
+                            >
+                                {textBtnConfirm}
+                            </button>
+
+                            <button
+                                className='btn-red btn-cancel'
+                                onClick={handleClose}
+                            >
+                                {textBtnCancel}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </>
     )
 }
+
 export default ConfirmModal;

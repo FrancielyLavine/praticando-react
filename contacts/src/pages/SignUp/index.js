@@ -1,20 +1,47 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BackgroundSingUp from '../../assets/background-singUp.svg';
+import api from '../../services/api';
 import './styles.css';
 
 function SignUp() {
+    const navigate = useNavigate()
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        try {
+            if (!name || !email || !password) {
+                return
+            }
+
+            const response = await api.post('/usuarios', {
+                nome: name,
+                email: email,
+                senha: password
+            });
+
+            if(response.status > 204) {
+                return
+            }
+
+            navigate('/');
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return (
         <div className='container-sign-up'>
-           
+
             <div className='left-sign-up'>
-                
+
                 <h3>Cadastre-se</h3>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input
                         placeholder='Nome'
                         type="text"

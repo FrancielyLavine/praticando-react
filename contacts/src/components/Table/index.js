@@ -1,23 +1,29 @@
-import './styles.css';
+import { useState } from 'react';
 import DeleteIcon from "../../assets/delete-icon.svg";
 import EditIcon from "../../assets/edit.svg";
 import ConfirmModal from '../ConfirmModal';
-import { useState } from 'react'
+import EditContactsModal from '../EditContactsModal';
+import './styles.css';
 
 
 function Table() {
-    const [open, setOpen] = useState();
+    const [openDelete, setOpenDelete] = useState();
+    const [openEdit, setOpenEdit] = useState('');
 
-    function handleClose() {
-        setOpen(false);
+    function handleCloseDelete() {
+        setOpenDelete(false);
     }
 
-    function handleConfirm() {
-        setOpen(false);
+    function handleConfirmDelete() {
+        setOpenDelete(false);
     }
 
     function handleDeleteContact(contact) {
-        setOpen(true)
+        setOpenDelete(true)
+    }
+
+    function handleEditContact(contact) {
+        setOpenEdit(true)
     }
 
     return (
@@ -35,7 +41,11 @@ function Table() {
                     <span>daniel@cubos.com</span>
                     <span>18 9999-0000</span>
                     <div className="container-actions-buttons">
-                        <img src={EditIcon} alt="edit icon" />
+                        <img 
+                        src={EditIcon} 
+                        alt="edit icon"
+                        onClick={() => handleEditContact(1)}
+                        />
                         <img
                             src={DeleteIcon}
                             alt="delete icon"
@@ -46,13 +56,17 @@ function Table() {
 
             </div>
             <ConfirmModal
-                open={open}
-                handleClose={handleClose}
+                open={openDelete}
+                handleClose={handleCloseDelete}
                 title="Confirma a exclusão?"
                 subTitle="Deseja excluir o contato Daniel Lopes?"
                 textBtnConfirm="Excluir"
                 textBtnCancel="Cancelar"
-                handleConfirm={handleConfirm}
+                handleConfirm={handleConfirmDelete}
+            />
+            <EditContactsModal
+                open={openEdit}
+                handleClose={() => setOpenEdit(false)}
             />
         </div>
     )

@@ -1,11 +1,49 @@
-import './styles.css';
-import BackgroundSingIn from '../../assets/background.svg';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import BackgroundSingIn from '../../assets/background.svg';
+import useGlobalContext from '../../hooks/useGlobalContext';
+import api from '../../services/api';
+import './styles.css';
 
 function SignIn() {
+    const navigate = useNavigate();
+
+    const { token, setToken, setUser } = useGlobalContext();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        try {
+            const response = await api.post('/login', {
+                email: email,
+                senha: password
+            });
+
+            if (response.status > 204) {
+                return;
+            }
+
+            const { usuario, token } = response.data;
+
+            navigate('/main')
+
+            setToken(token);
+            setUser(usuario);
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        if (token) {
+            navigate('/main');
+        }
+    }, [])
+
+
     return (
         <div className='container-sign-in'>
             <img src={BackgroundSingIn} alt='background' />
@@ -13,7 +51,7 @@ function SignIn() {
                 <span>Bem vindo</span>
                 <h1>Faça o login com sua conta</h1>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input
                         placeholder='E-mail'
                         type="text"

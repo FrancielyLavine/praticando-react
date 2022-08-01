@@ -1,12 +1,10 @@
 .backdrop {
-    width: 100vw;
-    min-height: 100vh;
-
+    background: rgba(16, 15, 15, 0.56);
     position: fixed;
     left: 0;
     top: 0;
-
-    background: rgba(16, 15, 15, 0.56);
+    width: 100vw;
+    min-height: 100vh;
 
     display: flex;
     align-items: center;
@@ -14,14 +12,19 @@
 }
 
 .modal {
-    padding: 56px;
-    position: relative;
-
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
-
     background-color: #FFFDFD;
+    padding: 56px;
+    position: relative;
+    text-align: center;
     border-radius: 8px;
+    justify-content: center;
+}
+
+.close-icon {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    cursor: pointer;
 }
