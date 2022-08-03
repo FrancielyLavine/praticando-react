@@ -1,7 +1,7 @@
 import CloseIcon from '../../assets/close-icon.svg';
 import '../../styles/modal.css';
 import './styles.css';
-// import useGlobalContext from '../../hooks/useGlobalContext';
+import useGlobalContext from '../../hooks/useGlobalContext';
 
 function ConfirmModal({
     open,
@@ -13,7 +13,7 @@ function ConfirmModal({
     handleConfirm
 }) {
 
-    // const { currentContact } = useGlobalContext();
+    const { currentContact } = useGlobalContext();
 
     return (
         <>
@@ -28,7 +28,7 @@ function ConfirmModal({
                         />
 
                         <h1>{title}</h1>
-                        {/* <span>{subTitle + ` ${currentContact.nome}`}?</span> */}
+                        <span>{subTitle + ` ${currentContact.nome}`}?</span>
 
                         <div className='container-buttons'>
                             <button

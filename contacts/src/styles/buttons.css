@@ -9,6 +9,8 @@ button {
     font-weight: bold;
     color: white;
 
+    cursor: pointer;
+
 }
 
 .btn-green{

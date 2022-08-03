@@ -7,6 +7,10 @@
     margin-top: 24px;
 }
 
+.modal-confirm img {
+    cursor: pointer;
+}
+
 .container-buttons button {
     width: 100%;
 }
@@ -14,9 +18,11 @@
 .btn-confirm {
     margin-top: 32px;
     margin-bottom: 0px;
+    cursor: pointer;
 }
 
 .btn-cancel {
     margin-top: 8px;
     margin-bottom: 0px;
+    cursor: pointer;
 }
